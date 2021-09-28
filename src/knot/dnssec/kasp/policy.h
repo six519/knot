@@ -126,6 +126,7 @@ typedef struct {
 	parent_dynarray_t parents;
 	uint16_t signing_threads;
 	bool offline_ksk;
+	bool incremental;
 	unsigned unsafe;
 } knot_kasp_policy_t;
 // TODO make the time parameters knot_timediff_t ??

@@ -69,6 +69,7 @@ class ZoneDnssec(object):
         self.shared_policy_with = None
         self.cds_publish = None
         self.cds_digesttype = None
+        self.dnskey_mgmt = None
         self.offline_ksk = None
 
 class Zone(object):
@@ -1413,6 +1414,7 @@ class Knot(Server):
             self._str(s, "cds-cdnskey-publish", z.dnssec.cds_publish)
             if z.dnssec.cds_digesttype:
                 self._str(s, "cds-digest-type", z.dnssec.cds_digesttype)
+            self._str(s, "dnskey-management", z.dnssec.dnskey_mgmt)
             self._str(s, "offline-ksk", z.dnssec.offline_ksk)
             self._str(s, "signing-threads", str(random.randint(1,4)))
         if have_policy:
